@@ -1,3 +1,8 @@
+# Trimmer
+
+動画の切り抜きを助ける奴みたいな何か。自分用なので適当。そのうちなおす。たぶん。
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
