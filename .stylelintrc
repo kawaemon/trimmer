@@ -1,0 +1,10 @@
+{
+  "processors": [["stylelint-processor-styled-components", { "strict": true }]],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components",
+  ],
+  "rules": {
+    "indentation": 4
+  }
+}
