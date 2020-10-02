@@ -21,6 +21,12 @@ const FileDropzoneWrapper = styled.div`
     justify-content: center;
 `;
 
+const TrimmerWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`;
+
 function App() {
     const [file, setFile] = React.useState<File | undefined>(undefined);
 
@@ -33,15 +39,11 @@ function App() {
     }
 
     return (
-        <>
+        <TrimmerWrapper>
             <ThemeProvider theme={muiTheme}>
-                <Trimmer
-                    onDelete={() => setFile(undefined)}
-                    file={file}
-                    onResetFile={(f: File) => setFile(f)}
-                />
+                <Trimmer file={file} onResetFile={(f) => setFile(f)} />
             </ThemeProvider>
-        </>
+        </TrimmerWrapper>
     );
 }
 

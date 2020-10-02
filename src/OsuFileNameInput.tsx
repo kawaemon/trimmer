@@ -6,7 +6,7 @@ import TextField from "@material-ui/core/TextField";
 type OsuFileNameInputFormat = {
     label: string;
     prop: string;
-    size: 1 | 2 | 4 | 8;
+    size: 1 | 2 | 3 | 4 | 8;
 };
 
 const OsuFileNameInputs: ReadonlyArray<OsuFileNameInputFormat> = [
@@ -38,7 +38,7 @@ const OsuFileNameInputs: ReadonlyArray<OsuFileNameInputFormat> = [
     {
         label: "Acc",
         prop: "acc",
-        size: 4,
+        size: 3,
     },
     {
         label: "PP",
@@ -101,27 +101,25 @@ export function OsuFileNameInput(props: OsuFileNameProps) {
     });
 
     return (
-        <GridWrapper>
-            <Grid container spacing={3}>
-                {OsuFileNameInputs.map((v) => (
-                    <Grid item xs={v.size}>
-                        <InputWrapper>
-                            <TextField
-                                label={v.label}
-                                fullWidth
-                                onChange={(e) => {
-                                    const newState = {
-                                        ...state,
-                                        [v.prop]: e.target.value,
-                                    };
-                                    setState(newState);
-                                    props.onChange(formatState(newState));
-                                }}
-                            />
-                        </InputWrapper>
-                    </Grid>
-                ))}
-            </Grid>
-        </GridWrapper>
+        <Grid container spacing={2}>
+            {OsuFileNameInputs.map((v) => (
+                <Grid item xs={v.size}>
+                    <InputWrapper>
+                        <TextField
+                            label={v.label}
+                            fullWidth
+                            onChange={(e) => {
+                                const newState = {
+                                    ...state,
+                                    [v.prop]: e.target.value,
+                                };
+                                setState(newState);
+                                props.onChange(formatState(newState));
+                            }}
+                        />
+                    </InputWrapper>
+                </Grid>
+            ))}
+        </Grid>
     );
 }
