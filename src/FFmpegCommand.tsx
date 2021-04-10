@@ -10,6 +10,7 @@ const FFmpegCommandWrapper = styled.div`
     padding: 10px;
     margin: 20px;
     text-align: center;
+    font-family: monospace;
 `;
 
 export type FFmpegCommandProps = {
