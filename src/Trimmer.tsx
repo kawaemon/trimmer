@@ -37,7 +37,6 @@ export class Trimmer extends React.Component<TrimmerProps, TrimmerState> {
     private videoUrl: { url: string; src: File };
 
     constructor(props: TrimmerProps) {
-        console.info("New Trimmer");
         super(props);
 
         this.onVideoLoad = this.onVideoLoad.bind(this);
@@ -102,8 +101,6 @@ export class Trimmer extends React.Component<TrimmerProps, TrimmerState> {
         };
 
         if (this.props.file !== this.videoUrl.src) {
-            console.log("Recreating video url");
-
             window.URL.revokeObjectURL(this.videoUrl.url);
             this.videoUrl.url = window.URL.createObjectURL(this.props.file);
             this.videoUrl.src = this.props.file;
