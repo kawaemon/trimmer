@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
+import styles from "./PathInput.module.css";
 
 export type Output = {
     inputPath: string;
@@ -29,11 +29,11 @@ export function PathInput(props: PathInputProps) {
     const [state, setState] = React.useState<State>({ input: "", output: "" });
 
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className={styles.grid}>
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="入力フォルダ"
+                    label="Path where input files at"
                     onChange={(e) => {
                         const newState: State = {
                             ...state,
@@ -48,7 +48,7 @@ export function PathInput(props: PathInputProps) {
             <Grid item xs={12}>
                 <TextField
                     fullWidth
-                    label="出力フォルダ"
+                    label="Path where output file is created at"
                     onChange={(e) => {
                         const newState: State = {
                             ...state,

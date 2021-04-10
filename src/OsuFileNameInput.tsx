@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 
@@ -80,15 +79,6 @@ function formatState(state: State): string {
     return text;
 }
 
-const InputWrapper = styled.div`
-    width: 100%;
-    margin: 10px;
-`;
-
-const GridWrapper = styled.div`
-    width: 75%;
-`;
-
 export function OsuFileNameInput(props: OsuFileNameProps) {
     const [state, setState] = React.useState<State>({
         artist: "",
@@ -102,22 +92,20 @@ export function OsuFileNameInput(props: OsuFileNameProps) {
 
     return (
         <Grid container spacing={2}>
-            {OsuFileNameInputs.map((v) => (
-                <Grid item xs={v.size}>
-                    <InputWrapper>
-                        <TextField
-                            label={v.label}
-                            fullWidth
-                            onChange={(e) => {
-                                const newState = {
-                                    ...state,
-                                    [v.prop]: e.target.value,
-                                };
-                                setState(newState);
-                                props.onChange(formatState(newState));
-                            }}
-                        />
-                    </InputWrapper>
+            {OsuFileNameInputs.map((v, i) => (
+                <Grid item xs={v.size} key={i}>
+                    <TextField
+                        label={v.label}
+                        fullWidth
+                        onChange={(e) => {
+                            const newState = {
+                                ...state,
+                                [v.prop]: e.target.value,
+                            };
+                            setState(newState);
+                            props.onChange(formatState(newState));
+                        }}
+                    />
                 </Grid>
             ))}
         </Grid>

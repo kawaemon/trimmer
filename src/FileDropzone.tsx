@@ -20,11 +20,9 @@ const MessageContainer = styled.div`
 `;
 
 export function FileDropzone(props: { onDrop: (f: File) => void }) {
-    const onDrop = React.useCallback((f) => props.onDrop(f[0]), []);
+    const onDrop = React.useCallback((f) => props.onDrop(f[0]), [props]);
 
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
-        onDrop,
-    });
+    const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     return (
         <Area {...getRootProps()}>
