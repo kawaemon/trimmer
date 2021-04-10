@@ -137,7 +137,6 @@ export class Trimmer extends React.Component<TrimmerProps, TrimmerState> {
                 <OsuFileNameInput
                     onChange={(e) => this.setState({ outputFilename: e })}
                 />
-                //TODO
                 <PathInput
                     onChange={(e) =>
                         this.setState({
