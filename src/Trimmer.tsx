@@ -12,6 +12,7 @@ const TrimmerWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     width: 75%;
+    padding: 8px;
 `;
 
 const Video = styled.video`
