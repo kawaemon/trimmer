@@ -25,7 +25,16 @@ export type FFmpegCommandProps = {
 };
 
 export function FFmpegCommand(props: FFmpegCommandProps) {
-    const text = `ffmpeg -ss ${props.beginTime} -to ${props.endTime} -i "${props.inputFilename}" -c:v ${props.videoCodec} -c:a ${props.audioCodec} -b:a ${props.audioBitrate} -crf ${props.crf} "${props.outputFilename}" && rm "${props.inputFilename}"`;
+    const text =
+        `ffmpeg -ss ${props.beginTime} ` +
+        `-to ${props.endTime} ` +
+        `-i "${props.inputFilename}" ` +
+        `-c:v ${props.videoCodec} ` +
+        `-c:a ${props.audioCodec} ` +
+        `-b:a ${props.audioBitrate} ` +
+        `-crf ${props.crf} ` +
+        `"${props.outputFilename}" ` +
+        `&& rm "${props.inputFilename}"`;
 
     return <FFmpegCommandWrapper>{text}</FFmpegCommandWrapper>;
 }
