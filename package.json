@@ -1,57 +1,32 @@
 {
-    "name": "trimer",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@material-ui/core": "^4.11.3",
-        "@testing-library/jest-dom": "^5.11.10",
-        "@testing-library/react": "^11.2.6",
-        "@testing-library/user-event": "^13.1.2",
-        "@types/jest": "^26.0.22",
-        "@types/node": "^14.14.37",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-dropzone": "^11.3.2",
-        "react-player": "^2.9.0",
-        "react-scripts": "4.0.3",
-        "typescript": "~4.2.4"
-    },
-    "devDependencies": {
-        "@types/react": "^17.0.3",
-        "@types/react-dom": "^17.0.3",
-        "@types/styled-components": "^5.1.9",
-        "path": "^0.12.7",
-        "prettier": "^2.2.1",
-        "styled-components": "^5.2.3",
-        "stylelint": "^13.12.0",
-        "stylelint-config-standard": "^21.0.0",
-        "stylelint-config-styled-components": "^0.1.1",
-        "stylelint-processor-styled-components": "^1.10.0"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "lint:css": "stylelint --ignore-path .gitignore '**/*.tsx'",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "format": "prettier -w \"**/*.tsx\""
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "prettier": {
-        "tabWidth": 4
-    }
+	"dependencies": {
+		"@material-ui/core": "^4.11.4",
+		"@tauri-apps/api": "^1.0.0-beta.1",
+		"@tauri-apps/cli": "^1.0.0-beta.2",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-dropzone": "^11.3.2",
+		"tailwindcss": "^2.1.2"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.8",
+		"@types/react-dom": "^17.0.5",
+		"autoprefixer": "^10.2.6",
+		"husky": "^6.0.0",
+		"next": "^10.2.3",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.3.0",
+		"prettier": "^2.3.0",
+		"typescript": "^4.3.2"
+	},
+	"scripts": {
+		"tauri": "tauri",
+		"dev": "run-p :next-dev :tauri-dev",
+		":next-dev": "next dev",
+		":tauri-dev": "tauri dev"
+	},
+	"prettier": {
+		"tabWidth": 1,
+		"useTabs": true
+	}
 }
